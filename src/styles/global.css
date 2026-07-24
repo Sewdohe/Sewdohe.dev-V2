@@ -24,6 +24,93 @@
 	--text-main: #c0caf5;
 	--text-muted: #565f89;
 	--border-color: rgba(255, 255, 255, 0.1);
+
+	/* Sumi Ink (Backgrounds & Surfaces) */
+	--sumi-ink-0: #16161D;
+	/* Darkest bg (floating elements / status bar) */
+	--sumi-ink-1: #1F1F28;
+	/* Base background */
+	--sumi-ink-2: #2A2A37;
+	/* Card / Surface background */
+	--sumi-ink-3: #363646;
+	/* Lighter surface / Active state */
+	--sumi-ink-4: #54546D;
+	/* Borders / Muted text / Line numbers */
+
+	/* Fuji & Old White (Foregrounds & Text) */
+	--fuji-white: #DCD7BA;
+	/* Primary body text */
+	--old-white: #C8C093;
+	/* Subdued / Secondary text */
+	--fuji-gray: #727169;
+	/* Comments / Muted text */
+	--katana-gray: #717C7C;
+	/* Dimmed elements */
+
+	/* Wave Blues & Aquas (Accents & Highlights) */
+	--wave-blue-1: #223249;
+	/* Selection background / Highlights */
+	--wave-blue-2: #2D4F67;
+	/* Active selections / Search bg */
+	--crystal-blue: #7E9CD8;
+	/* Primary links / Focus states / Functions */
+	--spring-blue: #7FB4CA;
+	/* Secondary accents */
+	--wave-aqua-1: #6A9589;
+	/* Teal accent / Info states */
+	--wave-aqua-2: #7AA89F;
+	/* Cyan / Types */
+
+	/* Autumn & Spring Colors (Vibrant Accents) */
+	--oni-violet: #957FB8;
+	/* Purple / Keywords */
+	--spring-violet: #938AA9;
+	/* Soft purple */
+	--spring-green: #98BB6C;
+	/* Success / Strings */
+	--autumn-green: #76946A;
+	/* Git Add / Success muted */
+	--carp-yellow: #E6C384;
+	/* Warnings / Identifiers */
+	--autumn-yellow: #DCA561;
+	/* Secondary warm accent */
+	--surimi-orange: #FFA066;
+	/* Warnings / Numbers / Constants */
+	--autumn-red: #C34043;
+	/* Errors / Danger */
+	--samurai-red: #E82424;
+	/* Bright error accent */
+	--sakura-pink: #D27E99;
+	/* Pink accent */
+
+	/* ==========================================================================
+     SEMANTIC UI MAPPING (Ready to use in site layout)
+     ========================================================================== */
+
+	/* Backgrounds */
+	--bg-app: var(--sumi-ink-1);
+	--bg-surface: var(--sumi-ink-2);
+	--bg-surface-hover: var(--sumi-ink-3);
+	--bg-overlay: var(--wave-blue-1);
+
+	/* Typography */
+	--text-primary: var(--fuji-white);
+	--text-secondary: var(--old-white);
+	--text-muted: var(--fuji-gray);
+	--text-accent: var(--crystal-blue);
+
+	/* Interactive & UI */
+	--brand-primary: var(--crystal-blue);
+	--brand-secondary: var(--oni-violet);
+	--border-subtle: var(--sumi-ink-3);
+	--border-strong: var(--sumi-ink-4);
+	--selection-bg: var(--wave-blue-2);
+
+	/* Feedback States */
+	--state-info: var(--wave-aqua-1);
+	--state-success: var(--spring-green);
+	--state-warning: var(--surimi-orange);
+	--state-danger: var(--autumn-red);
 }
 
 body {
@@ -40,25 +127,21 @@ body {
 	color: white;
 	line-height: 1.7;
 
-	margin: 0;
-	min-height: 100vh;
-	background-color: #0b0a10;
+	background-color: var(--bg-app);
+	color: var(--text-primary);
 
-	/* Layer 1: SVG Grain (Noise)
-     Layer 2: CRT Grid Lines
-     Layer 3: Ambient Radial Glow */
+	/* Textured Background using Kanagawa tones */
 	background-image:
-		/* SVG Noise Filter */
-		url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
+		/* Grain Noise Filter */
+		url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
 
-		/* CRT Grid Lines */
-		linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+		/* Subtle Grid Lines using --sumi-ink-3 */
+		linear-gradient(to right, rgba(54, 54, 70, 0.4) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(54, 54, 70, 0.4) 1px, transparent 1px),
 
-		/* Center Purple/Blue Glow */
-		radial-gradient(circle at 50% 50%, rgba(123, 44, 191, 0.35) 0%, rgba(11, 10, 16, 0) 60%);
+		/* Radial Glow using Oni Violet / Crystal Blue mix */
+		radial-gradient(circle at 50% 30%, rgba(149, 127, 184, 0.18) 0%, rgba(31, 31, 40, 0) 65%);
 
-	/* Grid sizing & repeat rules */
 	background-size: auto, 40px 40px, 40px 40px, 100% 100%;
 	background-repeat: repeat, repeat, repeat, no-repeat;
 	background-attachment: fixed;
@@ -108,11 +191,11 @@ b {
 }
 
 a {
-	color: var(--accent);
+	color: var(--brand-secondary);
 }
 
 a:hover {
-	color: var(--accent);
+	color: var(--brand-secondary);
 }
 
 p {
@@ -160,7 +243,7 @@ pre>code {
 }
 
 blockquote {
-	border-left: 4px solid var(--accent);
+	border-left: 4px solid var(--border-color);
 	padding: 0 0 0 20px;
 	margin: 0;
 	font-size: 1.333em;

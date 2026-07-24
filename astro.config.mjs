@@ -11,7 +11,15 @@ import expressiveCode from 'astro-expressive-code';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://sewdohe.dev',
-    integrations: [expressiveCode(), mdx(), sitemap(), icon()],
+    integrations: [expressiveCode({
+        // You can set configuration options here
+        themes: ['kanagawa-wave'],
+        useDarkModeMediaQuery: false,
+        themeCssSelector: () => ':root',
+        styleOverrides: {
+            codeFontFamily: '"Operator Mono", monospace',
+        },
+    }), mdx(), sitemap(), icon()],
     fonts: [
         {
             provider: fontProviders.local(),
