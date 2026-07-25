@@ -2,7 +2,7 @@
 title: 'Maintain a Minecraft Modpack using Git & Packwiz'
 description: 'Learn to manage a modpack using the CLI tool Packwiz'
 pubDate: 'Jan 11 2026'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+heroImage: '../../assets/packwiz.jpg'
 ---
 
 

@@ -28,8 +28,16 @@ import avatar from '../assets/avatars/32x32.png';
 		margin: 0;
 		padding: 0 1em;
 		color: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-		background: var(--bg-surface);
+		background: rgba(255, 255, 255, 0.15);
+		position: fixed;
+		width: 100vw;
+		/* border-radius: 16px; */
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(7.9px);
+		-webkit-backdrop-filter: blur(7.9px);
+		/* border: 1px solid rgba(255, 255, 255, 0.48); */
+		/* box-shadow: 0 2px 8px rgba(var(--black), 5%); */
+		/* background: var(--bg-surface); */
 	}
 	h2 {
 		margin: 0;
@@ -44,6 +52,7 @@ import avatar from '../assets/avatars/32x32.png';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		/* From https://css.glass */
 	}
 	nav a {
 		padding: 1em 0.5em;
