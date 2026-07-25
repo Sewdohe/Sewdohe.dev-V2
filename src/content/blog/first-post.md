@@ -1,21 +1,144 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
+title: 'Maintain a Minecraft Modpack using Git & Packwiz'
+description: 'Learn to manage a modpack using the CLI tool Packwiz'
+pubDate: 'Jan 11 2026'
 heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+## Packwiz & Modpacks
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+I've been serving a Minecraft server for the better part of 3-4 years now. Over that time I've gleamed alot of things - one of them being that I don't like to host my modpacks on "traditional" sites like Curseforge or Modrinth (although I do like Modrinth **significantly** more!) and I've found self-hosting not only to be easier, but much, MUCH more efficent that going to your standard modpack hosts…you see, Packwiz is something special. It's a whole modpack management suite! Let's dive in 🏊‍♂
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+### Why Use Packwiz??
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+> "I like Curseforge" or "I like Modrinth" you might be saying
 
+Well don't say that anymore. Because Packwiz gives you way more bang for your buck. Just a brief overview of features that Packwiz gives you as a modpack creator/maintainer:
 
-```js frame="terminal" title="my-test-file.js"
-console.log("This is an example code block");
+- Easy installation of mods `packwiz modrinth add <whatever-mod>`
+- One-line updating of all mod in a pack `packwiz update`
+- Able to add mods from both Modrinth as well as Curseforge
+- Quickly generate a list of all mods in your server `packwiz list`
+- Allows developers to specify which "side" a mod belongs on ( *server* | *client* | *both* )
+- Automatically resolves dependencies for your mods when installing them
+
+And you get all of these things wrapped up in a neat little easy-to-use command line package. Don't worry - if the command line scares you we'll get through it. Just stick with me. If Packwiz sounds like an enticing software for you and your Modpack - read on my friend!
+
+### Install Packwiz
+
+So, your first hurdle will be getting Packwiz installed on your machine where you want to build your modpack. Depending on your system, it could be really simple, or really annoying lol Sorry Windows people 👋 Either way, I will run through the process on both OS systems that I am familiar with: Linux, and (kinda?) Windows. It's been a long time though.
+
+#### Windows Installation
+
+`packwiz` is a command-line tool, so there is no ".exe installer" to double-click. You can choose one of the following methods to get it running.
+
+##### Method 1: Using Scoop (Recommended)
+
+Scoop is the easiest way to manage command-line tools on Windows. It handles the installation and adds `packwiz` to your PATH automatically.
+
+1. **Open PowerShell** and run this command to install Scoop (if you don't have it):
+
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ```
+
+1. **Add the Minecraft bucket** (a repository for Minecraft tools):
+
+```bash
+scoop bucket add minecraft https://github.com/The-Simples/scoop-minecraft
+```
+
+  1. **Install packwiz**:
+
+```bash
+scoop install packwiz
+```
+
+##### Method 2: Using Go (For Developers)
+
+If you already have [Go](https://go.dev/dl/) installed for development, you can compile the latest version directly from the source.
+
+1. Open your terminal and run:
+
+```bash
+go install github.com/packwiz/packwiz@latest
+```
+
+1. Ensure your `GOPATH/bin` (usually `%USERPROFILE%\go\bin`) is in your Windows Environment Variables **PATH**.
+
+##### Method 3: Manual Installation (The "Old School" Way)
+
+1. Go to the [packwiz GitHub Actions](https://www.google.com/search?q=https://github.com/packwiz/packwiz/actions) page and click on the latest successful build.
+2. Scroll down to **Artifacts** and download the `windows-amd64` zip file.
+3. Extract the `packwiz.exe` to a folder (e.g., `C:\Tools\packwiz`).
+4. Add that folder to your **System Environment Variables** (PATH) so you can run it from any folder.
+
+#### Verify Installation
+
+To make sure it worked, open a new terminal window and type:
+
+```bash
+packwiz --version
+```
+
+If it gives you a response, congrats! 🎊🎊 Now you're cooking with Packwiz. Exciting. Next we'll check in with the Linux users for a *very* short tutorial.
+
+#### Linux Installation
+
+##### Manual Install (not reccomended)
+
+Packwiz offers various binaries that you can simply add to a folder in your `$PATH`variable like `~/.local/bin/`and on your next terminal restart you should have access to the command.
+
+##### Package Mangager Install
+
+My recommended way to install Packwiz is to just use your systems package manager to install it using a one-liner command. For me on Arch linux it's just `yay -S packwiz`and the software is mine, and ready to use right afterwards.
+
+### Using Packwiz
+
+Okay - it's installed. You can access it in your terminal. **Now you're cooking, chef** 🍳
+
+Now it's time to learn a little bit of the terminal 😤 It's really not that bad, don't leave lol. I'm going to aim this portion of the tutorial at Windows users, as I'm assuming Linux users are familiar with the basics of the terminal already. Correct me in the comments below if I'm wrong.
+
+#### 1. Create a Modpack
+
+So to create a modpack with Packwiz we wanna use the `packwiz init`command - however, we don't just wanna run that command anywhere or you'll end up with a modpack being built in the middle of your home directory….you don't want that. So to begin, create a folder called `Modpacks`in your home directory. You can use the terminal or your file manager or choice for this step. Once you have a folder made you're going to have to move your terminals **working directory** to be in **that folder you just made.** To do this, just open your terminal: generally they will start you in your home directory, denoted with a `~` or `/home`. Now you just use the `cd`command to **change directory** to the folder you just made - so for example: `cd Modpacks`at which point you'll see your terminal prompt change to show you where you are at now.
+
+Now that you're in your `Modpacks`directory, create another new folder that is the name of the modpack you want to create, then `cd` into that new directory as well. So your path should be something like: `~/Modpacks/MyNewModpack/`.  
+Next thing to do is execute the `packwiz init`command into your terminal!!! 🎆
+
+You'll be drilled with a series of questions about your modpack name, author, Minecraft version, and modloader type. Answer all of these questions and you're basically done - now the only thing to do is add some mods dude 💪
+
+#### 2. Adding Mods
+
+Now inside of your modpack directory, if you run the `ls` command (or view it in a file manager) you'll see it's been populated with some `.toml` files. These are a configuration filetype, don't worry too much about it - you shouldn't ever need to mess with these! If you don't see these files in your modpack directory - you probably ran the command in the wrong place. Check your work and try again.
+
+If you **DO** have these files, it's time to go mod hunting! As stated earlier, Packwiz has the ability to add mods from Cursefore **OR** Modrinth, so pick your poison - although be warned, Curseforge mods are sometimes not available to download via thier API and users will have to manually download some mods. Modrinth is highly recommended over Curseforge. Curseforge is also full of ads. So yeah. Modrinth.
+
+ Once you've chosen your mod-provider, use thier respective command to add mods:
+ 
+ - `packwiz modrinth add <mod-name-here>`
+ - `packwiz curseforge add <mod-name-here>`
+
+"Where do I get the mod names?" you ask? Easy. Just use the end slug of any mod page URL and you're good to go. So, if the full mod url was: `https://modrinth.com/mod/sodium` just use the command `packwiz modrinth add sodium` 
+
+![[Pasted image 20251219231432.png]]
+
+Packwiz will go and find the version of the mod for your Minecraft version and your modloader…and it will also let you know **if there is no version for your MC version or modloader** which is really handy as it prevents you from running into version conflict errors before they ever can happen. Packwiz will also **inform you of any mod dependencies and auto-install them** along with the mod that you want. It's really, **really** handy I swear!
+
+Anyways - I think I can set you free for a while now! Just keep adding mods to your pack as you see fit. Come back once you think you've gotten all your mods sorted!
+
+#### 3. Distributing A Pack
+
+Once you've gotten your mod-list sorted, it's time to distribute. It's really easy. Packwiz comes with an `export` command that we can use to produce modpacks from our `.toml` files. Simply use `packwiz <curseforge | modrinth> export` and out it will shit a .zip (curseforge) or .mrpack (modrinth) modpack for you. These are by the book and uploadable to thier respective website - Packwiz isn't limited to just self-hosting a modpack.
+
+Congrats!!! 🎉 You made a modpack in the fuggin' terminal! Good job. Most people don't have the moxy, ya see?
+
+If you're curious about the "self-updating" portion that I mentioned at the top of the post - you'll have to keep reading. We're gonna have to get those files online in order to do that!
+
+#### 4. Self-Updating Servers & Clients
+
+This part of the tutorial is still a W.I.P. as it's a bit of a process to get working!!! 😅
+
+Coming Soon!

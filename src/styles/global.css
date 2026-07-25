@@ -5,155 +5,162 @@
  */
 
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--text-main: #c0caf5;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+  --accent: #2337ff;
+  --accent-dark: #000d8a;
+  --black: 15, 18, 25;
+  --gray: 96, 115, 159;
+  --text-main: #c0caf5;
+  --gray-light: 229, 233, 240;
+  --gray-dark: 34, 41, 57;
+  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  --box-shadow:
+    0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+    0 16px 32px rgba(var(--gray), 33%);
 
-	--bg-main: #1a1b26;
-	--bg-surface: #24283b;
-	--accent-primary: #7aa2f7;
-	--accent-secondary: #2ac3de;
-	--text-main: #c0caf5;
-	--text-muted: #565f89;
-	--border-color: rgba(255, 255, 255, 0.1);
+  --bg-main: #1a1b26;
+  --bg-surface: #24283b;
+  --accent-primary: #7aa2f7;
+  --accent-secondary: #2ac3de;
+  --text-main: #c0caf5;
+  --text-muted: #565f89;
+  --border-color: rgba(255, 255, 255, 0.1);
 
-	/* Sumi Ink (Backgrounds & Surfaces) */
-	--sumi-ink-0: #16161D;
-	/* Darkest bg (floating elements / status bar) */
-	--sumi-ink-1: #1F1F28;
-	/* Base background */
-	--sumi-ink-2: #2A2A37;
-	/* Card / Surface background */
-	--sumi-ink-3: #363646;
-	/* Lighter surface / Active state */
-	--sumi-ink-4: #54546D;
-	/* Borders / Muted text / Line numbers */
+  /* Sumi Ink (Backgrounds & Surfaces) */
+  --sumi-ink-0: #16161d;
+  /* Darkest bg (floating elements / status bar) */
+  --sumi-ink-1: #1f1f28;
+  /* Base background */
+  --sumi-ink-2: #2a2a37;
+  /* Card / Surface background */
+  --sumi-ink-3: #363646;
+  /* Lighter surface / Active state */
+  --sumi-ink-4: #54546d;
+  /* Borders / Muted text / Line numbers */
 
-	/* Fuji & Old White (Foregrounds & Text) */
-	--fuji-white: #DCD7BA;
-	/* Primary body text */
-	--old-white: #C8C093;
-	/* Subdued / Secondary text */
-	--fuji-gray: #727169;
-	/* Comments / Muted text */
-	--katana-gray: #717C7C;
-	/* Dimmed elements */
+  /* Fuji & Old White (Foregrounds & Text) */
+  --fuji-white: #dcd7ba;
+  /* Primary body text */
+  --old-white: #c8c093;
+  /* Subdued / Secondary text */
+  --fuji-gray: #727169;
+  /* Comments / Muted text */
+  --katana-gray: #717c7c;
+  /* Dimmed elements */
 
-	/* Wave Blues & Aquas (Accents & Highlights) */
-	--wave-blue-1: #223249;
-	/* Selection background / Highlights */
-	--wave-blue-2: #2D4F67;
-	/* Active selections / Search bg */
-	--crystal-blue: #7E9CD8;
-	/* Primary links / Focus states / Functions */
-	--spring-blue: #7FB4CA;
-	/* Secondary accents */
-	--wave-aqua-1: #6A9589;
-	/* Teal accent / Info states */
-	--wave-aqua-2: #7AA89F;
-	/* Cyan / Types */
+  /* Wave Blues & Aquas (Accents & Highlights) */
+  --wave-blue-1: #223249;
+  /* Selection background / Highlights */
+  --wave-blue-2: #2d4f67;
+  /* Active selections / Search bg */
+  --crystal-blue: #7e9cd8;
+  /* Primary links / Focus states / Functions */
+  --spring-blue: #7fb4ca;
+  /* Secondary accents */
+  --wave-aqua-1: #6a9589;
+  /* Teal accent / Info states */
+  --wave-aqua-2: #7aa89f;
+  /* Cyan / Types */
 
-	/* Autumn & Spring Colors (Vibrant Accents) */
-	--oni-violet: #957FB8;
-	/* Purple / Keywords */
-	--spring-violet: #938AA9;
-	/* Soft purple */
-	--spring-green: #98BB6C;
-	/* Success / Strings */
-	--autumn-green: #76946A;
-	/* Git Add / Success muted */
-	--carp-yellow: #E6C384;
-	/* Warnings / Identifiers */
-	--autumn-yellow: #DCA561;
-	/* Secondary warm accent */
-	--surimi-orange: #FFA066;
-	/* Warnings / Numbers / Constants */
-	--autumn-red: #C34043;
-	/* Errors / Danger */
-	--samurai-red: #E82424;
-	/* Bright error accent */
-	--sakura-pink: #D27E99;
-	/* Pink accent */
+  /* Autumn & Spring Colors (Vibrant Accents) */
+  --oni-violet: #957fb8;
+  /* Purple / Keywords */
+  --spring-violet: #938aa9;
+  /* Soft purple */
+  --spring-green: #98bb6c;
+  /* Success / Strings */
+  --autumn-green: #76946a;
+  /* Git Add / Success muted */
+  --carp-yellow: #e6c384;
+  /* Warnings / Identifiers */
+  --autumn-yellow: #dca561;
+  /* Secondary warm accent */
+  --surimi-orange: #ffa066;
+  /* Warnings / Numbers / Constants */
+  --autumn-red: #c34043;
+  /* Errors / Danger */
+  --samurai-red: #e82424;
+  /* Bright error accent */
+  --sakura-pink: #d27e99;
+  /* Pink accent */
 
-	/* ==========================================================================
+  /* ==========================================================================
      SEMANTIC UI MAPPING (Ready to use in site layout)
      ========================================================================== */
 
-	/* Backgrounds */
-	--bg-app: var(--sumi-ink-1);
-	--bg-surface: var(--sumi-ink-2);
-	--bg-surface-hover: var(--sumi-ink-3);
-	--bg-overlay: var(--wave-blue-1);
+  /* Backgrounds */
+  --bg-app: var(--sumi-ink-1);
+  --bg-surface: var(--sumi-ink-2);
+  --bg-surface-hover: var(--sumi-ink-3);
+  --bg-overlay: var(--wave-blue-1);
 
-	/* Typography */
-	--text-primary: var(--fuji-white);
-	--text-secondary: var(--old-white);
-	--text-muted: var(--fuji-gray);
-	--text-accent: var(--crystal-blue);
+  /* Typography */
+  --text-primary: var(--fuji-white);
+  --text-secondary: var(--old-white);
+  --text-muted: var(--fuji-gray);
+  --text-accent: var(--crystal-blue);
 
-	/* Interactive & UI */
-	--brand-primary: var(--crystal-blue);
-	--brand-secondary: var(--oni-violet);
-	--border-subtle: var(--sumi-ink-3);
-	--border-strong: var(--sumi-ink-4);
-	--selection-bg: var(--wave-blue-2);
+  /* Interactive & UI */
+  --brand-primary: var(--crystal-blue);
+  --brand-secondary: var(--oni-violet);
+  --border-subtle: var(--sumi-ink-3);
+  --border-strong: var(--sumi-ink-4);
+  --selection-bg: var(--wave-blue-2);
 
-	/* Feedback States */
-	--state-info: var(--wave-aqua-1);
-	--state-success: var(--spring-green);
-	--state-warning: var(--surimi-orange);
-	--state-danger: var(--autumn-red);
+  /* Feedback States */
+  --state-info: var(--wave-aqua-1);
+  --state-success: var(--spring-green);
+  --state-warning: var(--surimi-orange);
+  --state-danger: var(--autumn-red);
 }
 
 body {
-	font-family: var(--font-atkinson);
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	/* background: linear-gradient(var(--gray-gradient)) no-repeat; */
-	/* background-size: 100% 600px; */
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	color: white;
-	line-height: 1.7;
+  font-family: var(--font-atkinson);
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
+  /* background-size: 100% 600px; */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: rgb(var(--gray-dark));
+  font-size: 20px;
+  color: white;
+  line-height: 1.7;
 
-	background-color: var(--bg-app);
-	color: var(--text-primary);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
 
-	/* Textured Background using Kanagawa tones */
-	background-image:
+  /* Textured Background using Kanagawa tones */
+  background-image:
 		/* Grain Noise Filter */
-		url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+    /* Subtle Grid Lines using --sumi-ink-3 */
+    linear-gradient(to right, rgba(54, 54, 70, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(54, 54, 70, 0.4) 1px, transparent 1px),
+    /* Radial Glow using Oni Violet / Crystal Blue mix */
+    radial-gradient(
+        circle at 50% 30%,
+        rgba(149, 127, 184, 0.18) 0%,
+        rgba(31, 31, 40, 0) 65%
+      );
 
-		/* Subtle Grid Lines using --sumi-ink-3 */
-		linear-gradient(to right, rgba(54, 54, 70, 0.4) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(54, 54, 70, 0.4) 1px, transparent 1px),
-
-		/* Radial Glow using Oni Violet / Crystal Blue mix */
-		radial-gradient(circle at 50% 30%, rgba(149, 127, 184, 0.18) 0%, rgba(31, 31, 40, 0) 65%);
-
-	background-size: auto, 40px 40px, 40px 40px, 100% 100%;
-	background-repeat: repeat, repeat, repeat, no-repeat;
-	background-attachment: fixed;
+  background-size:
+    auto,
+    40px 40px,
+    40px 40px,
+    100% 100%;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+  background-attachment: fixed;
 }
 
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 3em 1em;
 }
 
 h1,
@@ -162,128 +169,142 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--text-main));
-	line-height: 1.2;
-	font-family: var(--font-montserrat);
+  margin: 0 0 0.5rem 0;
+  color: rgb(var(--text-main));
+  line-height: 1.2;
+  font-family: var(--font-montserrat);
 }
 
 h1 {
-	font-size: 3.052em;
+  font-size: 3.052em;
 }
 
 h2 {
-	font-size: 2.441em;
+  font-size: 2.441em;
 }
 
 h3 {
-	font-size: 1.953em;
+  font-size: 1.953em;
 }
 
 h4 {
-	font-size: 1.563em;
+  font-size: 1.563em;
 }
 
 h5 {
-	font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 strong,
 b {
-	font-weight: 700;
-	color: var(--text-accent)
+  font-weight: 700;
+  color: var(--text-accent);
 }
 
 a {
-	color: var(--brand-secondary);
+  color: var(--brand-secondary);
 }
 
 a:hover {
-	color: var(--brand-secondary);
+  color: var(--brand-secondary);
 }
 
 p {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+article ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .prose p {
-	margin-bottom: 2em;
+  margin-bottom: 2em;
+}
+
+.expressive-code {
+  margin: 1em 0;
 }
 
 textarea {
-	width: 100%;
-	font-size: 16px;
+  width: 100%;
+  font-size: 16px;
 }
 
 input {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 table {
-	width: 100%;
+  width: 100%;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--bg-surface));
-	border-radius: 2px;
-	font-family: var(--font-operator);
+  padding: 2px 5px;
+  background-color: var(--bg-surface);
+  border-radius: 8px;
+  margin: 0 0.3em;
+  border: 1px solid var(--sakura-pink);
+  font-family: var(--font-operator);
 }
 
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
-	font-family: var(--font-operator);
+  padding: 1.5em;
+  border-radius: 8px;
+  font-family: var(--font-operator);
 }
 
-pre>code {
-	all: unset;
+pre > code {
+  all: unset;
 }
 
 blockquote {
-	border-left: 4px solid var(--border-color);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
+  border-left: 4px solid var(--border-color);
+  padding: 0 0 0 20px;
+  margin: 0;
+  font-size: 1.333em;
 }
 
 hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+  border: none;
+  border-top: 1px solid rgb(var(--gray-light));
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
+  body {
+    font-size: 18px;
+  }
 
-	main {
-		padding: 1em;
-	}
+  main {
+    padding: 1em;
+  }
 }
 
 .sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
 }
