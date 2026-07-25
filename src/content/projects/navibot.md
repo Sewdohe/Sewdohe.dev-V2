@@ -9,7 +9,7 @@ heroImage: '../../assets/navibot/navibot1.png'
 
 ![navibot2]('../../assets/navibot/navibot2.png')
 
-Navi Engine is a high-performance, enterprise-grade Discord bot framework. It pairs a lightning-fast Rust core with a hot-reloadable Lua plugin system and a built-in Terminal UI (TUI) dashboard. 
+Navi Engine is a high-performance, enterprise-grade Discord bot framework. It pairs a lightning-fast Rust core with a hot-reloadable Lua plugin system and a built-in Terminal UI (TUI) dashboard.
 
 With Navi, you never have to recompile your Rust binary to add new bot features. Simply write a Lua script, drop it in the `plugins/` directory, and hit reload.
 
@@ -29,17 +29,21 @@ With Navi, you never have to recompile your Rust binary to add new bot features.
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 * Rust and Cargo installed.
 * A Discord Bot Token.
 
 ### Installation
+
 1. Clone the repository.
 2. Create a `.env` file in the root directory and add your bot token: `DISCORD_TOKEN=your_token_here`
 3. Run the engine:
+
 ```bash
 cargo run
 ```
-4. The TUI will launch, and the engine will automatically execute any `.lua` files found in the `plugins/` directory.
+
+1. The TUI will launch, and the engine will automatically execute any `.lua` files found in the `plugins/` directory.
 
 ---
 
@@ -103,9 +107,9 @@ To get full autocomplete, hover documentation, and type-checking in your editor 
 
 ## Planned Features
 
-- [x] ~~Implement lists of nested objects as config option and TUI to support it~~
-- [x] ~~Add more Discord features to the engine~~
-- [x] ~~Bolster the amount of built-in core plugins~~
-- [x] ~~Implement handling modal forms~~
-- [x] ~~Implement plugin repo for user-created plugins~~
-- [ ] Implement ability for lua code to expose custom TUI functionality
+* [x] ~~Implement lists of nested objects as config option and TUI to support it~~
+* [x] ~~Add more Discord features to the engine~~
+* [x] ~~Bolster the amount of built-in core plugins~~
+* [x] ~~Implement handling modal forms~~
+* [x] ~~Implement plugin repo for user-created plugins~~
+* [ ] Implement ability for lua code to expose custom TUI functionality
