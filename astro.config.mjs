@@ -69,6 +69,12 @@ export default defineConfig({
               ],
           },
       },
+      {
+          provider: fontProviders.google(),
+          name: 'Montserrat',
+          cssVariable: '--font-montserrat',
+          fallbacks: ['sans-serif'],
+      },
   ],
 
   vite: {
