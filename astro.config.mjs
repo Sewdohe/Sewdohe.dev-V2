@@ -61,6 +61,16 @@ export default defineConfig({
       },
     },
     {
+      provider: fontProviders.google(),
+      name: "Inter",
+      cssVariable: "--font-inter",
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Caveat",
+      cssVariable: "--font-caveat",
+    },
+    {
       provider: fontProviders.local(),
       name: "Operator Mono",
       cssVariable: "--font-operator",

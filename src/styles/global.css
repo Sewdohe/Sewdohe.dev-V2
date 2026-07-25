@@ -10,6 +10,8 @@
 @theme inline {
   --font-heading: var(--font-montserrat);
   --font-code: var(--font-operator);
+  --font-inter: var(--font-inter);
+  --font-handwritten: var(--font-caveat);
 }
 
 :root {
@@ -122,7 +124,7 @@
 }
 
 body {
-  font-family: var(--font-atkinson);
+  font-family: var(--font-inter);
   margin: 0;
   padding: 0;
   text-align: left;

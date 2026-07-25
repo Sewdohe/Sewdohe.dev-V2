@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from "./FormattedDate.astro";
+
+interface Props {
+  data: {
+    title: string;
+    description: string;
+    heroImage?: ImageMetadata;
+    pubDate: Date;
+  };
+  type: "blog" | "projects";
+  id: string;
+}
+
+const { id, type, data } = Astro.props;
+---
+
+<li>
+  <a href={`/${type}/${id}/`}>
+    {
+      data.heroImage && (
+        <Image width={720} height={360} src={data.heroImage!} alt="" />
+      )
+    }
+    <h4 class="font-handwritten">{data.title}</h4>
+    <p class="mt-0 font-handwritten">
+      <FormattedDate date={data.pubDate} />
+    </p>
+  </a>
+</li>

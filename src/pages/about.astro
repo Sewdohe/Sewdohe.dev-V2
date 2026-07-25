@@ -2,12 +2,14 @@
 import AvatarBanner from "../assets/avatar-banner.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Layout from "../layouts/BlogPost.astro";
+import Prose from "../components/Prose.astro";
 ---
 
 <BaseLayout
   title="About Me"
   description="Lorem ipsum dolor sit amet"
 >
+<Prose>
   <p>
     Hello 👋 I'm Josh, but better known on the internet by my monicour, Sewdohe.
     I'm a long-time hobby developer and Linux user. FOSS advocate. Mechanic by
@@ -37,4 +39,5 @@ import Layout from "../layouts/BlogPost.astro";
     now...I just piddle on what I enjoy on the weekends while a turn wrench
     during the weekdays.
   </p>
+</Prose>
 </BaseLayout>
