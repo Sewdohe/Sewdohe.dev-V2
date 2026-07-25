@@ -12,6 +12,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import partytown from '@astrojs/partytown';
 
+import preact from '@astrojs/preact';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sewdohe.dev',
@@ -24,7 +26,7 @@ export default defineConfig({
       styleOverrides: {
           codeFontFamily: '"Operator Mono", monospace',
       },
-  }), mdx(), sitemap(), icon(), partytown()],
+  }), mdx(), sitemap(), icon(), partytown(), preact({compat: true})],
 
   fonts: [
       {
