@@ -1,84 +1,93 @@
 // @ts-check
 
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import { defineConfig, fontProviders } from 'astro/config';
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import { defineConfig, fontProviders } from "astro/config";
 
-import icon from 'astro-icon';
+import icon from "astro-icon";
 
-import expressiveCode from 'astro-expressive-code';
+import expressiveCode from "astro-expressive-code";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
-import partytown from '@astrojs/partytown';
+import partytown from "@astrojs/partytown";
 
-import preact from '@astrojs/preact';
+import preact from "@astrojs/preact";
+
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sewdohe.dev',
-
-  integrations: [expressiveCode({
+  site: "https://sewdohe.dev",
+  adapter: netlify(),
+  integrations: [
+    expressiveCode({
       // You can set configuration options here
-      themes: ['kanagawa-wave'],
+      themes: ["kanagawa-wave"],
       useDarkModeMediaQuery: false,
-      themeCssSelector: () => ':root',
+      themeCssSelector: () => ":root",
       styleOverrides: {
-          codeFontFamily: '"Operator Mono", monospace',
+        codeFontFamily: '"Operator Mono", monospace',
       },
-  }), mdx(), sitemap(), icon(), partytown(), preact({compat: true})],
+    }),
+    mdx(),
+    sitemap(),
+    icon(),
+    partytown(),
+    preact({ compat: true }),
+  ],
 
   fonts: [
-      {
-          provider: fontProviders.local(),
-          name: 'Atkinson',
-          cssVariable: '--font-atkinson',
-          fallbacks: ['sans-serif'],
-          options: {
-              variants: [
-                  {
-                      src: ['./src/assets/fonts/atkinson-regular.woff'],
-                      weight: 400,
-                      style: 'normal',
-                      display: 'swap',
-                  },
-                  {
-                      src: ['./src/assets/fonts/atkinson-bold.woff'],
-                      weight: 700,
-                      style: 'normal',
-                      display: 'swap',
-                  },
-              ],
+    {
+      provider: fontProviders.local(),
+      name: "Atkinson",
+      cssVariable: "--font-atkinson",
+      fallbacks: ["sans-serif"],
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/atkinson-regular.woff"],
+            weight: 400,
+            style: "normal",
+            display: "swap",
           },
-      },
-      {
-          provider: fontProviders.local(),
-          name: 'Operator Mono',
-          cssVariable: '--font-operator',
-          fallbacks: ['sans-serif'],
-          options: {
-              variants: [
-                  {
-                      src: ['./src/assets/fonts/OperatorMono-Book.otf'],
-                      weight: 400,
-                      style: 'normal',
-                      display: 'swap',
-                  },
-                  {
-                      src: ['./src/assets/fonts/OperatorMono-Bold.otf'],
-                      weight: 700,
-                      style: 'normal',
-                      display: 'swap',
-                  },
-              ],
+          {
+            src: ["./src/assets/fonts/atkinson-bold.woff"],
+            weight: 700,
+            style: "normal",
+            display: "swap",
           },
+        ],
       },
-      {
-          provider: fontProviders.google(),
-          name: 'Montserrat',
-          cssVariable: '--font-montserrat',
-          fallbacks: ['sans-serif'],
+    },
+    {
+      provider: fontProviders.local(),
+      name: "Operator Mono",
+      cssVariable: "--font-operator",
+      fallbacks: ["sans-serif"],
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/OperatorMono-Book.otf"],
+            weight: 400,
+            style: "normal",
+            display: "swap",
+          },
+          {
+            src: ["./src/assets/fonts/OperatorMono-Bold.otf"],
+            weight: 700,
+            style: "normal",
+            display: "swap",
+          },
+        ],
       },
+    },
+    {
+      provider: fontProviders.google(),
+      name: "Montserrat",
+      cssVariable: "--font-montserrat",
+      fallbacks: ["sans-serif"],
+    },
   ],
 
   vite: {
