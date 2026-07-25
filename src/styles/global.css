@@ -7,6 +7,11 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+@theme inline {
+  --font-heading: var(--font-montserrat);
+  --font-code: var(--font-operator);
+}
+
 :root {
   --accent: #2337ff;
   --accent-dark: #000d8a;

@@ -117,11 +117,11 @@ Now inside of your modpack directory, if you run the `ls` command (or view it in
 If you **DO** have these files, it's time to go mod hunting! As stated earlier, Packwiz has the ability to add mods from Cursefore **OR** Modrinth, so pick your poison - although be warned, Curseforge mods are sometimes not available to download via thier API and users will have to manually download some mods. Modrinth is highly recommended over Curseforge. Curseforge is also full of ads. So yeah. Modrinth.
 
  Once you've chosen your mod-provider, use thier respective command to add mods:
- 
- - `packwiz modrinth add <mod-name-here>`
- - `packwiz curseforge add <mod-name-here>`
 
-"Where do I get the mod names?" you ask? Easy. Just use the end slug of any mod page URL and you're good to go. So, if the full mod url was: `https://modrinth.com/mod/sodium` just use the command `packwiz modrinth add sodium` 
+- `packwiz modrinth add <mod-name-here>`
+- `packwiz curseforge add <mod-name-here>`
+
+"Where do I get the mod names?" you ask? Easy. Just use the end slug of any mod page URL and you're good to go. So, if the full mod url was: `https://modrinth.com/mod/sodium` just use the command `packwiz modrinth add sodium`
 
 ![[Pasted image 20251219231432.png]]
 
