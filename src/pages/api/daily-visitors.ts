@@ -3,8 +3,8 @@ import type { APIRoute } from 'astro';
 export const prerender = false;
 
 export const GET: APIRoute = async () => {
-  const serverUrl = import.meta.env.UMAMI_SERVER_URL;
-  const websiteId = import.meta.env.UMAMI_WEBSITE_ID;
+  const serverUrl = import.meta.env.PUBLIC_UMAMI_SERVER_URL;
+  const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
   const username = import.meta.env.UMAMI_USERNAME;
   const password = import.meta.env.UMAMI_PASSWORD;
 
