@@ -6,6 +6,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import FormattedDate from "../components/FormattedDate.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -15,80 +16,71 @@ const blog = (await getCollection("blog")).sort(
 );
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>Sewdohe.dev</h1>
-      <p>
-        Welcome to my little slice of the internet! Glad you stopped by! Not
-        alot to see here as of now - I'm working on this new website!!
-      </p>
-      <p>
-        I was previously using an Astro template website that allowed me to
-        author posts using Obsidian - but template code was quite complicated,
-        and I'd like to just <b>build</b> my website from scratch again. Easier for
-        me to add features and customize! There's quite nothing like a hand-built
-        site ❤️ They are getting more and more rare these days!
-      </p>
-      <hr />
-      <section class="flex flex-col md:flex-row gap-6">
-        <div>
-          <h1>Latest Projects</h1>
-          <ul>
-            {
-              projects.map((project) => (
-                <li>
-                  <a href={`/projects/${project.id}/`}>
-                    {project.data.heroImage && (
-                      <Image
-                        width={720}
-                        height={360}
-                        src={project.data.heroImage}
-                        alt=""
-                      />
-                    )}
-                    <h4 class="title">{project.data.title}</h4>
-                    <p class="date">
-                      <FormattedDate date={project.data.pubDate} />
-                    </p>
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <div>
-          <h1>Latest Blog Posts</h1>
-          <ul>
-            {
-              blog.map((blog) => (
-                <li>
-                  <a href={`/blog/${blog.id}/`}>
-                    {blog.data.heroImage && (
-                      <Image
-                        width={720}
-                        height={360}
-                        src={blog.data.heroImage}
-                        alt=""
-                      />
-                    )}
-                    <h4 class="title">{blog.data.title}</h4>
-                    <p class="date">
-                      <FormattedDate date={blog.data.pubDate} />
-                    </p>
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <h1>Sewdohe.dev</h1>
+  <p>
+    Welcome to my little slice of the internet! Glad you stopped by! Not
+    alot to see here as of now - I'm working on this new website!!
+  </p>
+  <p>
+    I was previously using an Astro template website that allowed me to
+    author posts using Obsidian - but template code was quite complicated,
+    and I'd like to just <b>build</b> my website from scratch again. Easier for
+    me to add features and customize! There's quite nothing like a hand-built
+    site ❤️ They are getting more and more rare these days!
+  </p>
+  <hr />
+  <section class="flex flex-col md:flex-row gap-6">
+    <div>
+      <h1>Latest Projects</h1>
+      <ul>
+        {
+          projects.map((project) => (
+            <li>
+              <a href={`/projects/${project.id}/`}>
+                {project.data.heroImage && (
+                  <Image
+                    width={720}
+                    height={360}
+                    src={project.data.heroImage}
+                    alt=""
+                  />
+                )}
+                <h4 class="title">{project.data.title}</h4>
+                <p class="date">
+                  <FormattedDate date={project.data.pubDate} />
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div>
+      <h1>Latest Blog Posts</h1>
+      <ul>
+        {
+          blog.map((blog) => (
+            <li>
+              <a href={`/blog/${blog.id}/`}>
+                {blog.data.heroImage && (
+                  <Image
+                    width={720}
+                    height={360}
+                    src={blog.data.heroImage}
+                    alt=""
+                  />
+                )}
+                <h4 class="title">{blog.data.title}</h4>
+                <p class="date">
+                  <FormattedDate date={blog.data.pubDate} />
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

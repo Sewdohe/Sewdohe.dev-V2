@@ -10,6 +10,8 @@ import expressiveCode from 'astro-expressive-code';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import partytown from '@astrojs/partytown';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sewdohe.dev',
@@ -22,7 +24,7 @@ export default defineConfig({
       styleOverrides: {
           codeFontFamily: '"Operator Mono", monospace',
       },
-  }), mdx(), sitemap(), icon()],
+  }), mdx(), sitemap(), icon(), partytown()],
 
   fonts: [
       {

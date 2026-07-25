@@ -1,30 +1,40 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import AvatarBanner from '../assets/avatar-banner.png';
-import Layout from '../layouts/BlogPost.astro';
+import AvatarBanner from "../assets/avatar-banner.png";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from "../layouts/BlogPost.astro";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('July 24 2026')}
-	heroImage={AvatarBanner}
+<BaseLayout
+  title="About Me"
+  description="Lorem ipsum dolor sit amet"
 >
-	<p>
-		Hello 👋 I'm Josh, but better known on the internet by my monicour, Sewdohe. I'm a long-time hobby developer and Linux user. FOSS advocate. Mechanic by day
-		and developer by night (mostly on weekends lol). I've been responsible for some pretty cool projects, but nothing huge. I'm a piddler, really.
-	</p>
-	<p>
-		At 12 I wrote my first ugly little html page. I can still remember the horrible brushed metal background with red text - but something about being able to
-		breathe life into a browser using simple text was magical for me. I was hooked. Ever since then I've had a deep love for creating things on the computer. After my first
-		couple simple webpages I began learning design - I would participate in "signature competitions" on various fourms...one of which I remember vividly was the Gameshark forums.
-		What a strange place that was. Odd to even think about an "active forum" these days - the internet has changed so much since I was younger. I wish I still had the things 
-		I made from that era - I used to upload everything to a place called photobucket. It's a long gone website now - along with everything I used to design.
-	</p>
-	<p>
-		In my current era, I mostly just piddle on weekends. My 9-7 job is as a mechanic. While I'm able to do things to cars I never thought I'd be able to do, 
-		I violently wish I could work full-time as a developer. Sadly, life must come first. As a father to two children I have to do what pays the bills. Turn wrench. Maybe
-		one day I can break the poverty-cycle and get a better job that would free up my time to focus on becoming a developer, but for now...I just piddle on what I enjoy on the weekends
-		while a turn wrench during the weekdays.
-	</p>
-</Layout>
+  <p>
+    Hello 👋 I'm Josh, but better known on the internet by my monicour, Sewdohe.
+    I'm a long-time hobby developer and Linux user. FOSS advocate. Mechanic by
+    day and developer by night (mostly on weekends lol). I've been responsible
+    for some pretty cool projects, but nothing huge. I'm a piddler, really.
+  </p>
+  <p>
+    At 12 I wrote my first ugly little html page. I can still remember the
+    horrible brushed metal background with red text - but something about being
+    able to breathe life into a browser using simple text was magical for me. I
+    was hooked. Ever since then I've had a deep love for creating things on the
+    computer. After my first couple simple webpages I began learning design - I
+    would participate in "signature competitions" on various fourms...one of
+    which I remember vividly was the Gameshark forums. What a strange place that
+    was. Odd to even think about an "active forum" these days - the internet has
+    changed so much since I was younger. I wish I still had the things I made
+    from that era - I used to upload everything to a place called photobucket.
+    It's a long gone website now - along with everything I used to design.
+  </p>
+  <p>
+    In my current era, I mostly just piddle on weekends. My 9-7 job is as a
+    mechanic. While I'm able to do things to cars I never thought I'd be able to
+    do, I violently wish I could work full-time as a developer. Sadly, life must
+    come first. As a father to two children I have to do what pays the bills.
+    Turn wrench. Maybe one day I can break the poverty-cycle and get a better
+    job that would free up my time to focus on becoming a developer, but for
+    now...I just piddle on what I enjoy on the weekends while a turn wrench
+    during the weekdays.
+  </p>
+</BaseLayout>
