@@ -1,24 +1,31 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { Icon } from 'astro-icon/components';
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<'a'> & {
+  icon?: string;
+};
 
-const { href, class: className, ...props } = Astro.props;
+const { href, class: className, icon, ...props } = Astro.props;
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
+    {icon && <Icon name={icon} class="block sm:hidden text-xl" />}
+    <span class="hidden sm:inline">
+        <slot />
+    </span>
 </a>
+
 <style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
+    a {
+        display: inline-block;
+        text-decoration: none;
+    }
+    a.active {
+        font-weight: bolder;
+        text-decoration: underline;
+    }
 </style>

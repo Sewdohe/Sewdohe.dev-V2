@@ -2,16 +2,18 @@
 import { Icon } from 'astro-icon/components';
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import { Image } from 'astro:assets';
+import avatar from '../assets/avatars/32x32.png';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/projects">Projects</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+		<a href="/"><Image src={avatar} alt="Sewdohe's avatar" /></a>
+		<div class="internal-links flex flex-row">
+			<HeaderLink href="/" icon="fa-solid:home">Home</HeaderLink>
+			<HeaderLink href="/blog" icon="fa-solid:newspaper">Blog</HeaderLink>
+			<HeaderLink href="/projects" icon="fa-solid:code">Projects</HeaderLink>
+			<HeaderLink href="/about" icon="fa-solid:user">About</HeaderLink>
 		</div>
 		<div class="social-links">
 			<a href="https://github.com/sewdohe" target="_blank">
