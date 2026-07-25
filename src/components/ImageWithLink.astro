@@ -16,15 +16,15 @@ interface Props {
 const { id, type, data } = Astro.props;
 ---
 
-<li>
+<li class="flex justify-center align-middle">
   <a href={`/${type}/${id}/`}>
     {
       data.heroImage && (
         <Image width={720} height={360} src={data.heroImage!} alt="" />
       )
     }
-    <h4 class="font-handwritten">{data.title}</h4>
-    <p class="mt-0 font-handwritten">
+    <h4 class="text-3xl font-montserrat font-bold text-center">{data.title}</h4>
+    <p class="mt-0 text-(--text-muted) text-sm text-center">
       <FormattedDate date={data.pubDate} />
     </p>
   </a>

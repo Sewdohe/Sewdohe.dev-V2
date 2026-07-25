@@ -170,38 +170,6 @@ main {
   padding: 3em 1em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 0.5rem 0;
-  color: rgb(var(--text-main));
-  line-height: 1.2;
-  font-family: var(--font-montserrat);
-}
-
-h1 {
-  font-size: 3.052em;
-}
-
-h2 {
-  font-size: 2.441em;
-}
-
-h3 {
-  font-size: 1.953em;
-}
-
-h4 {
-  font-size: 1.563em;
-}
-
-h5 {
-  font-size: 1.25em;
-}
-
 strong,
 b {
   font-weight: 700;
@@ -216,37 +184,9 @@ a:hover {
   color: var(--brand-secondary);
 }
 
-p {
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-article ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.prose p {
-  margin-bottom: 2em;
-}
 
 .expressive-code {
   margin: 1em 0;
-}
-
-textarea {
-  width: 100%;
-  font-size: 16px;
-}
-
-input {
-  font-size: 16px;
-}
-
-table {
-  width: 100%;
 }
 
 img {
@@ -275,7 +215,7 @@ pre > code {
 }
 
 blockquote {
-  border-left: 4px solid var(--border-color);
+  border-left: 4px solid var(--brand-secondary);
   padding: 0 0 0 20px;
   margin: 0;
   font-size: 1.333em;
@@ -283,7 +223,7 @@ blockquote {
 
 hr {
   border: none;
-  border-top: 1px solid rgb(var(--gray-light));
+  border-top: 1px solid rgb(var(--border-strong));
   margin-top: 2rem;
   margin-bottom: 2rem;
 }

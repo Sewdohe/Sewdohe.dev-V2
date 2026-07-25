@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FallbackImage from "../assets/blog-placeholder-1.jpg";
 import "../styles/global.css";
+import BaseHead from "../components/BaseHead.astro";
 
 interface Props {
   title: string;
@@ -26,9 +27,10 @@ const { title, description, image = FallbackImage } = Astro.props;
       defer
       src="https://analytics.sewdohe.dev/script.js"
       data-website-id="26987df5-ff56-4169-85b6-4be8ce38e324"></script>
+      <BaseHead title={title} {description} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="font-inter">
     <Header />
     <main>
       <slot />
